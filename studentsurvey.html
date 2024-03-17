@@ -1,0 +1,262 @@
+<!----Author:Mahitha Dodda
+This is the student survey page where a form is provided to enter details like Name, address, date of survey and so on. 
+Primary details are set as required fields meeting the assignment requirements. Few fields like comments, checkboxes are optional.
+At the end there are 2 action buttons, submit and cancel.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student Survey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="studentsurvey.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="w3-light-grey scroll-smooth">
+    <nav class="w3-bar">
+        <a href="index.html" style="flex-grow: 1;">
+            <img src="masonlogo.png" alt="University Logo" style="width: 100px;">
+        </a>
+        <div style="display: flex; gap: 10px;"> 
+            <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        </div>
+    </nav>
+
+
+    <!-- Content -->
+    <div id="form" class="container">
+        <div class="row">
+            <div class="col">
+                <div class="heading"
+                    style="border: 5px solid #006633; box-shadow: 10px 10px 20px rgba(0.2, 0.2, 0.4, 0.2); text-align: center; padding: 15px;">
+                    <h1
+                        style="color: #006633; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px; font-weight: bold;">
+                        Student Survey Form</h1>
+                </div>
+
+            </div>
+        </div>
+        <!-- Form Styling-->
+        <div class="Surveyform row mt-2">
+            <div class="Formstart col-md-8 offset-md-2">
+                <form autocomplete="on" id="surveyform">
+                    <!-- Basic Information -->
+                    <div class="row">
+                        <div class="email col-md-6 mb-3">
+                            <label class="label" for="first_name">Firstname:<span
+                                    style="color: red;">(*)</span>:</label>
+                            <input type="text" class="form-control" placeholder="Jane" autocomplete="firstname" required
+                                autofocus>
+                        </div>
+                        <div class="number col-md-6 mb-3">
+                            <label class="label" for="last_name">Lastname:<span style="color: red;">(*)</span>:</label>
+                            <input type="text" class="form-control" placeholder="Doe" autocomplete="lastname" required
+                                autofocus>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="address mb-3">
+                        <label class="label" for="street_address">Resident Address:<span
+                                style="color: red;">(*)</span></label>
+                        <input type="text" class="form-control" placeholder="1234 Remond Dr" required autofocus>
+                    </div>
+                    <div class="row">
+                        <div class="city col-md-6 mb-3">
+                            <label class="label" for="city_name">City:<span style="color: red;">(*)</span></label>
+                            <input type="text" class="form-control" placeholder="New York" required>
+                        </div>
+                        <div class="state col-md-3 mb-3">
+                            <label class="label" for="state_name">State:<span style="color: red;">(*)</span></label>
+                            <input list="states" class="form-control" placeholder="Virginia" required>
+                            <datalist id="states">
+                                <option value="Alabama">
+                                <option value="Alaska">
+                                <option value="Arizona">
+                                <option value="Arkansas">
+                                <option value="California">
+                                <option value="Colorado">
+                                <option value="Connecticut">
+                                <option value="Delaware">
+                                <option value="Florida">
+                                <option value="Georgia">
+                                <option value="Hawaii">
+                                <option value="Idaho">
+                                <option value="Illinois">
+                                <option value="Indiana">
+                                <option value="Iowa">
+                                <option value="Kansas">
+                                <option value="Kentucky">
+                                <option value="Louisiana">
+                                <option value="Maine">
+                                <option value="Maryland">
+                                <option value="Massachusetts">
+                                <option value="Michigan">
+                                <option value="Minnesota">
+                                <option value="Mississippi">
+                                <option value="Missouri">
+                                <option value="Montana">
+                                <option value="Nebraska">
+                                <option value="Nevada">
+                                <option value="New Hampshire">
+                                <option value="New Jersey">
+                                <option value="New Mexico">
+                                <option value="New York">
+                                <option value="North Carolina">
+                                <option value="North Dakota">
+                                <option value="Ohio">
+                                <option value="Oklahoma">
+                                <option value="Oregon">
+                                <option value="Pennsylvania">
+                                <option value="Rhode Island">
+                                <option value="South Carolina">
+                                <option value="South Dakota">
+                                <option value="Tennessee">
+                                <option value="Texas">
+                                <option value="Utah">
+                                <option value="Vermont">
+                                <option value="Virginia">
+                                <option value="Washington">
+                                <option value="West Virginia">
+                                <option value="Wisconsin">
+                                <option value="Wyoming">
+                            </datalist>
+                        </div>
+                        <div class="zip col-md-3 mb-3">
+                            <label class="label" for="zip_code">Zip-Code:<span style="color: red;">(*)</span></label>
+                            <input type="text" class="form-control" placeholder="52207" required>
+                        </div>
+                    </div>
+                    <!-- Email and Phone number -->
+                    <div class="row">
+                        <div class="email col-md-6 mb-3">
+                            <label class="label" for="email_address">Email:<span style="color: red;">(*)</span></label>
+                            <input type="email" class="form-control" placeholder="janed@gmail.com" required>
+                        </div>
+                        <div class="number col-md-6 mb-3">
+                            <label class="label" for="phone_number">Phone-number:<span
+                                    style="color: red;">(*)</span></label>
+                            <input type="tel" class="form-control" placeholder="(587)-444-9876" required>
+                        </div>
+                    </div>
+                    <!-- Date of Survey -->
+                    <div class="row">
+                        <div class="date col-md-6 mb-3">
+                            <label class="label" for="date_of_survey">Date of Survey:<span
+                                    style="color: red;">(*)</span></label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <!------Checkboxes----->
+                            <label class="label">What aspect of the campus did you find most appealing?</label>
+
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="atmosphere">
+                                <label class="form-check-label" for="atmosphere">Atmosphere</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="campus">
+                                <label class="form-check-label" for="campus">Campus</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dorm_rooms">
+                                <label class="form-check-label" for="dorm-rooms">Dorm Rooms</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="location">
+                                <label class="form-check-label" for="location">Location</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="sports">
+                                <label class="form-check-label" for="sports">Sports</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="students">
+                                <label class="form-check-label" for="students">Students</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <!--  Radio Buttons -->
+                        <div class="col-md-6 mb-3">
+                            <label class="label">How did you develop an interest in the university?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="universityInterest" id="friends"
+                                    value="Friends">
+                                <label class="form-check-label" for="friends">Friends</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="universityInterest" id="television"
+                                    value="Television">
+                                <label class="form-check-label" for="television">Television</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="universityInterest" id="internet"
+                                    value="Internet">
+                                <label class="form-check-label" for="internet">Internet</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="universityInterest" id="other"
+                                    value="Other">
+                                <label class="form-check-label" for="other">Other</label>
+                            </div>
+
+
+                        </div>
+                        <!-- Column for Likelihood to Recommend University -->
+                        <div class="col-md-6 mb-3">
+                            <label class="label" for="likerecommend">Likelihood of Recommending the University:</label>
+                            <select class="form-control" id="likerecommend" name="likerecommend">
+                                <option value="Very Likely">Very Likely</option>
+                                <option value="Likely">Likely</option>
+                                <option value="Unlikely">Unlikely</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="label" for="raffle_field">Raffle Field(Enter atleast 10 comma separated
+                                numbers between 1 and 100)</label>
+                            <input type="text" class="form-control" required autofocus>
+                        </div>
+
+                        <!-- Column for Comments -->
+                        <div class="col-md-6 mb-3">
+                            <label class="label" for="comments">Comments(optional):</label>
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+
+                    </div>
+                    <!-- Action Buttons -->
+                    <button type="submit" class="btn btn-primary" style="align-content: center;">Submit</button>
+                    <button type="button" class="btn btn-danger"
+                        style="align-content: center; background-color: rgb(157, 22, 22);" onclick="cancelForm()">Cancel
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <script>
+        function cancelForm() {
+            //Clears all the input fields in the form
+            document.getElementById('surveyform').reset();
+        }
+    </script>
+</body>
+
+</html>
