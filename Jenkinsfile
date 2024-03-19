@@ -22,8 +22,8 @@ pipeline {
         }
         stage("Deploying on Kubernetes") {
             steps {
-                sh 'kubectl set image deployment/swe645assignment2 container-0=mahitha9201/studentsurveyform:latest -n default'
-                sh 'kubectl rollout restart deploy swe645assignment2 -n default'
+                sh 'kubectl set image deployment/assignment2-deployment container-0=mahitha9201/studentsurveyform:latest -n default'
+                sh 'kubectl rollout restart deploy assignment2-deployment -n default'
             }
         }
     }
